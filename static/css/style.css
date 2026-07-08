@@ -185,7 +185,7 @@
     }
   }
 
-  
+
   /* Upload Section */
 .upload-section {
     padding: 80px 0;
@@ -284,4 +284,48 @@
   
   @keyframes spin {
     to { transform: rotate(360deg); }
+  }
+
+
+
+  /* Feature list (checkmark-style items) */
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 25px 0;
+  }
+  
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #191A23;
+  }
+  
+  .feature-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #B9FF66;
+    flex-shrink: 0;
+  }
+  
+  /* Condition pills (small tags under hero) */
+  .deco-classes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 30px;
+  }
+  
+  .pill {
+    background-color: #F3F3F3;
+    color: #191A23;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid #ddd;
   }
