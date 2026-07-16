@@ -44,6 +44,7 @@
     <h2>Upload Your Skin Photo</h2>
     <p class="upload-subtitle">Use a clear, well-lit photo for the most accurate analysis.</p>
 
+    {% if session.user_id %}
     <div id="uploadForm">
       <div class="upload-box" id="uploadBox">
         <input type="file" id="fileInput" name="skin_image" accept="image/*" hidden>
@@ -60,6 +61,13 @@
 
       <button type="button" id="analyzeBtn" class="analyze-btn" disabled>Analyze Skin</button>
     </div>
+    {% else %}
+    <div class="login-prompt">
+      <p>You need an account to analyze your skin.</p>
+      <a href="/login" class="analyze-btn">Log In to Continue</a>
+      <p class="upload-subtitle">New here? <a href="/signup">Create one — it only takes a minute</a></p>
+    </div>
+    {% endif %}
   </div>
 </section>
 
