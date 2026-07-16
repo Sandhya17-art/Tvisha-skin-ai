@@ -6,6 +6,8 @@ if (uploadForm) {
   const uploadPlaceholder = document.getElementById('uploadPlaceholder');
   const previewImage = document.getElementById('previewImage');
   const analyzeBtn = document.getElementById('analyzeBtn');
+  const loadingState = document.getElementById('loadingState');
+  const analysisNote = document.getElementById('analysisNote');
 
   uploadBox.addEventListener('click', () => fileInput.click());
 
@@ -40,5 +42,18 @@ if (uploadForm) {
     reader.readAsDataURL(file);
 
     analyzeBtn.disabled = false;
+    analysisNote.hidden = true;
   }
+
+  analyzeBtn.addEventListener('click', () => {
+    analyzeBtn.disabled = true;
+    analysisNote.hidden = true;
+    loadingState.hidden = false;
+
+    setTimeout(() => {
+      loadingState.hidden = true;
+      analysisNote.hidden = false;
+      analyzeBtn.disabled = false;
+    }, 1800);
+  });
 }

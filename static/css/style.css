@@ -282,6 +282,18 @@
     animation: spin 0.8s linear infinite;
   }
 
+  /* Analysis note (shown after the loading state) */
+  .analysis-note {
+    max-width: 420px;
+    margin: 25px auto 0;
+    padding: 16px 22px;
+    background-color: #F7EBEB;
+    border: 1px solid #D4A5A5;
+    border-radius: 12px;
+    color: #191A23;
+    font-size: 14px;
+  }
+
   @keyframes spin {
     to { transform: rotate(360deg); }
   }
