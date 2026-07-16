@@ -282,16 +282,94 @@
     animation: spin 0.8s linear infinite;
   }
 
-  /* Analysis note (shown after the loading state) */
-  .analysis-note {
-    max-width: 420px;
+  /* Sample result card (shown after the loading state) */
+  .result-card {
+    max-width: 460px;
     margin: 25px auto 0;
-    padding: 16px 22px;
+    padding: 28px 30px;
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border-radius: 16px;
+    text-align: left;
+  }
+
+  .result-card .result-tag {
+    display: inline-block;
     background-color: #F7EBEB;
-    border: 1px solid #D4A5A5;
-    border-radius: 12px;
+    color: #B87D7D;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .result-card .result-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+
+  .result-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
     color: #191A23;
+    margin: 0;
+  }
+
+  .result-card .result-confidence {
+    font-size: 13px;
+    font-weight: 700;
+    color: #B87D7D;
+  }
+
+  .result-card .conf-track {
+    background-color: #F3F3F3;
+    border-radius: 20px;
+    height: 6px;
+    overflow: hidden;
+    margin-bottom: 18px;
+  }
+
+  .result-card .conf-fill {
+    height: 100%;
+    border-radius: 20px;
+    background-color: #D4A5A5;
+  }
+
+  .result-card h4 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #999;
+    margin: 0 0 10px;
+  }
+
+  .result-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 4px;
+  }
+
+  .result-card li {
     font-size: 14px;
+    color: #444;
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+
+  .result-card li::before {
+    content: "•";
+    color: #D4A5A5;
+    font-weight: 700;
+    position: absolute;
+    left: 0;
   }
 
   @keyframes spin {

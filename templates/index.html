@@ -68,8 +68,19 @@
       </div>
 
       <!-- Shown once the demo "analysis" finishes -->
-      <div id="analysisNote" class="analysis-note" hidden>
-        This is a frontend demo — the AI analysis engine (trained model + Grad-CAM) is built and tested separately and connects in the next phase.
+      <div id="resultCard" class="result-card" hidden>
+        <span class="result-tag">Sample Result</span>
+        <div class="result-heading">
+          <h3 id="resultCondition">Inflammatory Acne</h3>
+          <span class="result-confidence" id="resultConfidence">94%</span>
+        </div>
+        <div class="conf-track"><div class="conf-fill" id="resultConfBar" style="width:0%"></div></div>
+        <h4>Care Advice</h4>
+        <ul id="resultAdvice">
+          <li>Apply broad-spectrum SPF 30+ daily</li>
+          <li>Never pick or pop affected areas</li>
+          <li>Use a gentle, non-comedogenic cleanser</li>
+        </ul>
       </div>
     </div>
     {% else %}

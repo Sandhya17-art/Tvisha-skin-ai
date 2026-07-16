@@ -7,7 +7,8 @@ if (uploadForm) {
   const previewImage = document.getElementById('previewImage');
   const analyzeBtn = document.getElementById('analyzeBtn');
   const loadingState = document.getElementById('loadingState');
-  const analysisNote = document.getElementById('analysisNote');
+  const resultCard = document.getElementById('resultCard');
+  const resultConfBar = document.getElementById('resultConfBar');
 
   uploadBox.addEventListener('click', () => fileInput.click());
 
@@ -42,18 +43,25 @@ if (uploadForm) {
     reader.readAsDataURL(file);
 
     analyzeBtn.disabled = false;
-    analysisNote.hidden = true;
+    resultCard.hidden = true;
+    resultConfBar.style.width = '0%';
   }
 
   analyzeBtn.addEventListener('click', () => {
     analyzeBtn.disabled = true;
-    analysisNote.hidden = true;
+    resultCard.hidden = true;
     loadingState.hidden = false;
 
     setTimeout(() => {
       loadingState.hidden = true;
-      analysisNote.hidden = false;
+      resultCard.hidden = false;
       analyzeBtn.disabled = false;
+
+      // animate the confidence bar in after the card appears
+      requestAnimationFrame(() => {
+        resultConfBar.style.transition = 'width 0.8s ease';
+        resultConfBar.style.width = '94%';
+      });
     }, 1800);
   });
 }
