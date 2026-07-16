@@ -53,12 +53,33 @@ if (uploadForm) {
     setTimeout(() => {
       const demoResult = {
         photo: selectedPhotoDataUrl,
-        condition: 'Inflammatory Acne',
-        confidence: 94,
-        advice: [
-          'Apply broad-spectrum SPF 30+ daily',
-          'Never pick or pop affected areas',
-          'Use a gentle, non-comedogenic cleanser'
+        icon: '🔥',
+        confidence: 94.6,
+        concern_name: 'Inflammatory Acne',
+        explanation: 'Your skin shows inflammatory acne — red, swollen pimples, pustules, or cysts caused by bacteria and excess oil triggering an immune response.',
+        all_probs: [
+          { label: 'Inflammatory Acne', confidence: 94.6, is_top: true },
+          { label: 'Enlarged Pores', confidence: 2.1, is_top: false },
+          { label: 'Dark Spots', confidence: 1.2, is_top: false },
+          { label: 'Skin Redness', confidence: 0.9, is_top: false },
+          { label: 'Blackheads', confidence: 0.6, is_top: false },
+          { label: 'Pigmentation', confidence: 0.4, is_top: false },
+          { label: 'Whiteheads', confidence: 0.2, is_top: false },
+          { label: 'Fine Lines & Wrinkles', confidence: 0.0, is_top: false }
+        ],
+        ingredients: ['Salicylic Acid', 'Benzoyl Peroxide', 'Tea Tree Oil', 'Zinc', 'Niacinamide'],
+        suggested_products: [
+          { brand: 'COSRX', name: 'Acne Pimple Master Patch' },
+          { brand: 'Some By Mi', name: '30 Days Miracle Toner' },
+          { brand: 'CeraVe', name: 'Acne Foaming Cream Cleanser' },
+          { brand: 'COSRX', name: 'Salicylic Acid Daily Gentle Cleanser' }
+        ],
+        skincare_advice: [
+          'Cleanse your face twice daily with a gentle non-comedogenic cleanser',
+          'Never pick or pop pimples — this worsens inflammation and causes scarring',
+          'Use only oil-free, non-comedogenic moisturizers and makeup',
+          'Change pillowcases every 2–3 days to reduce bacteria exposure',
+          'Consult a dermatologist if acne is severe or persists beyond 3 months'
         ]
       };
       localStorage.setItem('tvishaDemoResult', JSON.stringify(demoResult));
