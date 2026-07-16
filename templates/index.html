@@ -44,6 +44,7 @@
     <h2>Upload Your Skin Photo</h2>
     <p class="upload-subtitle">Use a clear, well-lit photo for the most accurate analysis.</p>
 
+    {% if session.user_id %}
     <div class="upload-box" id="uploadBox">
       <input type="file" id="fileInput" accept="image/*" hidden>
 
@@ -64,6 +65,13 @@
       <div class="spinner"></div>
       <p>Analyzing your skin...</p>
     </div>
+    {% else %}
+    <div class="login-prompt">
+      <p>You need an account to analyze your skin.</p>
+      <a href="/login" class="analyze-btn">Log In to Continue</a>
+      <p class="upload-subtitle">New here? <a href="/signup">Create one — it only takes a minute</a></p>
+    </div>
+    {% endif %}
   </div>
 </section>
 
@@ -104,8 +112,8 @@
       <div class="condition-card">Dark Spots</div>
       <div class="condition-card">Wrinkles</div>
       <div class="condition-card">Inflammatory Acne</div>
-      <div class="condition-card">Whiteheads</div>s</div>
-      <div class="condition-card">BlacKheads</div>
+      <div class="condition-card">Whiteheads</div>
+      <div class="condition-card">Blackheads</div>
       <div class="condition-card">Pigmentation</div>
       <div class="condition-card">Pores</div>
 

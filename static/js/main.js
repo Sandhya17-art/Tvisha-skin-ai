@@ -8,6 +8,9 @@ const loadingState = document.getElementById('loadingState');
 
 let selectedFile = null;
 
+// Upload box only exists when the visitor is logged in
+if (uploadBox) {
+
 // Click box → open file picker
 uploadBox.addEventListener('click', () => fileInput.click());
 
@@ -72,3 +75,5 @@ analyzeBtn.addEventListener('click', () => {
     window.location.href = "/result";
   }, 1800);
 });
+
+} // end if (uploadBox)
