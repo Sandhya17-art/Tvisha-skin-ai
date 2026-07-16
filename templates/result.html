@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Your Results - TVISHA{% endblock %}
+{% block content %}
+
+<section class="upload-section">
+  <div class="container" style="max-width: 620px;">
+    <h2>Your Skin Analysis</h2>
+    <p class="upload-subtitle">Here's a sample of what TVISHA's result page looks like.</p>
+
+    <div id="noResult" class="result-card" style="text-align:center;">
+      <p>No photo analyzed yet. <a href="/#upload">Go back and upload one</a>.</p>
+    </div>
+
+    <div id="resultWrap" hidden>
+      <div style="text-align:center; margin-bottom:20px;">
+        <img id="resultPhoto" class="preview-image" alt="Uploaded photo">
+      </div>
+
+      <div class="result-card">
+        <span class="result-tag">Sample Result</span>
+        <div class="result-heading">
+          <h3 id="resultCondition">Inflammatory Acne</h3>
+          <span class="result-confidence" id="resultConfidence">94%</span>
+        </div>
+        <div class="conf-track"><div class="conf-fill" id="resultConfBar" style="width:0%"></div></div>
+        <h4>Care Advice</h4>
+        <ul id="resultAdvice">
+          <li>Apply broad-spectrum SPF 30+ daily</li>
+          <li>Never pick or pop affected areas</li>
+          <li>Use a gentle, non-comedogenic cleanser</li>
+        </ul>
+      </div>
+
+      <div style="text-align:center; margin-top:25px;">
+        <a href="/#upload" class="hero-btn">Analyze Another Photo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/result.js') }}"></script>
+{% endblock %}

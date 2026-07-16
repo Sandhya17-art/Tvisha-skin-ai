@@ -7,8 +7,8 @@ if (uploadForm) {
   const previewImage = document.getElementById('previewImage');
   const analyzeBtn = document.getElementById('analyzeBtn');
   const loadingState = document.getElementById('loadingState');
-  const resultCard = document.getElementById('resultCard');
-  const resultConfBar = document.getElementById('resultConfBar');
+
+  let selectedPhotoDataUrl = null;
 
   uploadBox.addEventListener('click', () => fileInput.click());
 
@@ -36,32 +36,33 @@ if (uploadForm) {
 
     const reader = new FileReader();
     reader.onload = (e) => {
-      previewImage.src = e.target.result;
+      selectedPhotoDataUrl = e.target.result;
+      previewImage.src = selectedPhotoDataUrl;
       previewImage.hidden = false;
       uploadPlaceholder.hidden = true;
     };
     reader.readAsDataURL(file);
 
     analyzeBtn.disabled = false;
-    resultCard.hidden = true;
-    resultConfBar.style.width = '0%';
   }
 
   analyzeBtn.addEventListener('click', () => {
     analyzeBtn.disabled = true;
-    resultCard.hidden = true;
     loadingState.hidden = false;
 
     setTimeout(() => {
-      loadingState.hidden = true;
-      resultCard.hidden = false;
-      analyzeBtn.disabled = false;
-
-      // animate the confidence bar in after the card appears
-      requestAnimationFrame(() => {
-        resultConfBar.style.transition = 'width 0.8s ease';
-        resultConfBar.style.width = '94%';
-      });
+      const demoResult = {
+        photo: selectedPhotoDataUrl,
+        condition: 'Inflammatory Acne',
+        confidence: 94,
+        advice: [
+          'Apply broad-spectrum SPF 30+ daily',
+          'Never pick or pop affected areas',
+          'Use a gentle, non-comedogenic cleanser'
+        ]
+      };
+      localStorage.setItem('tvishaDemoResult', JSON.stringify(demoResult));
+      window.location.href = '/result';
     }, 1800);
   });
 }
