@@ -6,7 +6,6 @@ if (uploadForm) {
   const uploadPlaceholder = document.getElementById('uploadPlaceholder');
   const previewImage = document.getElementById('previewImage');
   const analyzeBtn = document.getElementById('analyzeBtn');
-  const loadingState = document.getElementById('loadingState');
 
   uploadBox.addEventListener('click', () => fileInput.click());
 
@@ -42,9 +41,4 @@ if (uploadForm) {
 
     analyzeBtn.disabled = false;
   }
-
-  uploadForm.addEventListener('submit', () => {
-    loadingState.hidden = false;
-    analyzeBtn.disabled = true;
-  });
 }
