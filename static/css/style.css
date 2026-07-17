@@ -246,6 +246,7 @@
   }
 
   .analyze-btn {
+    display: inline-block;
     background-color: #191A23;
     color: white;
     border: none;
@@ -253,6 +254,7 @@
     border-radius: 10px;
     font-size: 16px;
     font-weight: 600;
+    text-decoration: none;
     cursor: pointer;
     transition: 0.3s ease;
   }
@@ -265,6 +267,22 @@
   .analyze-btn:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+  }
+
+  /* Login prompt (shown when logged out) */
+  .login-prompt {
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .login-prompt p {
+    margin-bottom: 16px;
+    color: #666;
+  }
+
+  .login-prompt .analyze-btn {
+    margin-bottom: 16px;
   }
 
   /* Loading Spinner */
